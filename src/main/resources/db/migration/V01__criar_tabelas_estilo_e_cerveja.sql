@@ -1,4 +1,3 @@
--- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; 
 CREATE TABLE estilo (
     codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL

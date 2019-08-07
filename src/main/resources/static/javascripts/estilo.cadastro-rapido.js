@@ -8,13 +8,13 @@ Brewer.EstiloCadastroRapido = (function() {
 		this.form = this.modal.find('form');
 		this.url = this.form.attr('action');
 		this.inputNomeEstilo = $('#nomeEstilo');
-		this.containerMensagemErro = $('.js-mensagem-cadastro-rapido-estilo');		
+		this.containerMensagemErro = $('.js-mensagem-cadastro-rapido-estilo');
 	}
 	
-	EstiloCadastroRapido.prototype.iniciar() {		
-		this.form.on('submit', function(event) { event.preventDefault(); });		
+	EstiloCadastroRapido.prototype.iniciar = function() {
+		this.form.on('submit', function(event) { event.preventDefault() });
 		this.modal.on('shown.bs.modal', onModalShow.bind(this));
-		this.modal.on('hide.bs.modal', onModalClose.bind(this));
+		this.modal.on('hide.bs.modal', onModalClose.bind(this))
 		this.botaoSalvar.on('click', onBotaoSalvarClick.bind(this));
 	}
 	
@@ -42,7 +42,7 @@ Brewer.EstiloCadastroRapido = (function() {
 	
 	function onErroSalvandoEstilo(obj) {
 		var mensagemErro = obj.responseText;
-		this.containerMensagemErro.removeClass('hidden'); 
+		this.containerMensagemErro.removeClass('hidden');
 		this.containerMensagemErro.html('<span>' + mensagemErro + '</span>');
 		this.form.find('.form-group').addClass('has-error');
 	}
@@ -58,9 +58,7 @@ Brewer.EstiloCadastroRapido = (function() {
 	
 }());
 
-
 $(function() {
-	
 	var estiloCadastroRapido = new Brewer.EstiloCadastroRapido();
 	estiloCadastroRapido.iniciar();
-})
+});

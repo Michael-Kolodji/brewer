@@ -1,10 +1,10 @@
 var Brewer = Brewer || {};
 
-Brewer.MasMoney = (function() {
+Brewer.MaskMoney = (function() {
 	
 	function MaskMoney() {
 		this.decimal = $('.js-decimal');
-		this.plain = $('.js-plain');		
+		this.plain = $('.js-plain');
 	}
 	
 	MaskMoney.prototype.enable = function() {
@@ -19,4 +19,4 @@ Brewer.MasMoney = (function() {
 $(function() {
 	var maskMoney = new Brewer.MaskMoney();
 	maskMoney.enable();
-})
+});
